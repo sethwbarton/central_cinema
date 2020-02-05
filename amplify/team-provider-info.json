@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-centralcinema-dev-224524-authRole",
+            "UnauthRoleArn": "arn:aws:iam::830440829426:role/amplify-centralcinema-dev-224524-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::830440829426:role/amplify-centralcinema-dev-224524-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-centralcinema-dev-224524-deployment",
+            "UnauthRoleName": "amplify-centralcinema-dev-224524-unauthRole",
+            "StackName": "amplify-centralcinema-dev-224524",
+            "StackId": "arn:aws:cloudformation:us-west-2:830440829426:stack/amplify-centralcinema-dev-224524/b6cb97a0-47da-11ea-856b-02c46d078154",
+            "AmplifyAppId": "d2em7hcc3kmh0r"
+        }
+    }
+}
