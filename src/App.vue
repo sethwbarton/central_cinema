@@ -1,28 +1,90 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Central Cinema"/>
+    <div id="header">
+      <link href="http://allfont.net/allfont.css?fonts=broadway-normal" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand"><img id="logo" src="./assets/squarularized.png" alt="Logo"></img>H<img id="name" src="./assets/Logo.png" alt="Name"></img></a>
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link">Contact Us<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">About Us</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+    
+    <!--<img alt="Vue logo" src="../assets/logo.png">-->
+    <LogIn></LogIn>
+    <Welcome></Welcome>
+            
   </div>
 </template>
 
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Welcome from './components/Welcome.vue'
+import LogIn from './components/LogIn.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Welcome,
+    LogIn
   }
 }
 </script>
 
 <style>
+html {
+  background-color: #040205;
+  color: #CFCFCF;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #040205;
+  /*text-align: center;*/
+  color: #CFCFCF;
+  /*margin-top: 60px;*/
+}
+
+h1 {
+  font-family: 'Broadway-Normal', arial;
+}
+
+nav {
+  width: 100%;
+  /*height: 112px;*/
+  height: 8%;
+  background-color: #7E1A22;
+  padding: 24px;
+}
+
+#logo {
+  height: 96px;
+  width: 96px;
+}
+
+#name {
+  height: 88px;
+}
+
+.navbar-brand {
+  padding: 24px;
+  color: #7E1A22 !important;
 }
 </style>
