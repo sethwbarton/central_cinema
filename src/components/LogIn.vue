@@ -6,7 +6,7 @@
         <p></p>
         <input type="password" placeholder="Password" v-model="password">
         <p></p>
-        <button v-on:click="">Log In</button>
+        <button>Log In</button>
         <p></p>
         <p>Don't have an account?</p>
         <button>Sign up for FREE!</button>
@@ -32,10 +32,10 @@ export default {
         var arrayLength = this.accounts.length;
         for (var i = 0; i < arrayLength; i++) {
             if(this.accounts[i].user == this.username && this.accounts[i].key == this.password) {
-                console.log("The user is in the database!");
+                // The user is in the database!
                 // switch to home page component
             } else {
-                console.log("Not this user...");
+                // Not this user...
             }
         }
       }
