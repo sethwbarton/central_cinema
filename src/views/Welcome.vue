@@ -1,16 +1,30 @@
 <template>
   <div class="hello">
-      <link href="http://allfont.net/allfont.css?fonts=broadway-normal" rel="stylesheet" type="text/css" />
+    <link href="http://allfont.net/allfont.css?fonts=broadway-normal" rel="stylesheet" type="text/css" />
     <div id="snippet">
+      <br>
+      <br>
+      <br>
       <h1>Central</h1>
       <h1>Cinema</h1>
       <h3>All your streaming services in one place!</h3>
       <br>
-      <button v-on:click=""><router-link to="/login">Log In</router-link></button>
+      <router-link to="/login"><button>Log In</button></router-link>
       <p></p>
       <p>Don't have an account?</p>
       <p></p>
       <button>Sign up for FREE!</button>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    
+    <div id="footer">
+      <img src="../assets/bottom_bar.png" alt="Possible Streaming Services"></img>
     </div>
   </div>
 </template>
@@ -26,11 +40,9 @@ export default {
 
 <style scoped>
 .hello {
-  
-    background-image: url("https://videohive.img.customer.envatousercontent.com/files/56273334-f705-4423-b658-a78a1974a87b/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=6c9ff1a35f234b038e0cf90c3a2c0c1a");
-    background-repeat: no-repeat;
-    background-size: 60% 100%;
-  /*margin: 24px;*/
+  background-image: url("https://videohive.img.customer.envatousercontent.com/files/56273334-f705-4423-b658-a78a1974a87b/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=6c9ff1a35f234b038e0cf90c3a2c0c1a");
+  background-repeat: no-repeat;
+  background-size: 60% 100%;
   text-align: center;
   color: #CFCFCF;
 }
@@ -56,6 +68,9 @@ a {
 p {
   font-size: 1.5em;
 }
+#snippet {
+  margin-left: 45%;
+}
 
 button {
   background-color: #7E1A22;
@@ -67,5 +82,18 @@ button {
 }
 router-link {
   color: #CFCFCF;
+}
+#footer {
+  width: 100%;
+  background-color: #7E1A22;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  font-size: 11pt;
+  padding: 20px;
+}
+
+img {
+  width: 65%;
 }
 </style>

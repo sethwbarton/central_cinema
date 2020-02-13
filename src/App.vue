@@ -22,8 +22,7 @@
         </nav>
     </div>
     
-    <div class="content">
-      <!--<img alt="Vue logo" src="../assets/logo.png">-->
+    <div id="content">
       <router-view />
     </div>
 
@@ -42,12 +41,12 @@ import Contact from './views/Contact.vue'
 import About from './views/About.vue'
 import HomePage from './views/HomePage.vue'
 import Viewing from './views/Viewing.vue'
+import bottom_bar from './assets/bottom_bar.png'
 
 export default {
   name: 'app',
   components: {
-    Welcome,
-    LogIn
+    Welcome
   }
 }
 </script>
@@ -57,7 +56,6 @@ html {
   background-color: #040205;
   color: #CFCFCF;
 }
-
 #navbarNav {
   align: right;
 }
@@ -103,5 +101,12 @@ nav .navbar-nav li a{
 
 .nav-item {
   color: #CFCFCF !important;
+}
+
+
+
+#content {
+  height: 100%;
+  
 }
 </style>
