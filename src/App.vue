@@ -4,28 +4,29 @@
       <link href="http://allfont.net/allfont.css?fonts=broadway-normal" rel="stylesheet" type="text/css" />
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand"><img id="logo" src="./assets/squarularized.png" alt="Logo"></img>H<img id="name" src="./assets/Logo.png" alt="Name"></img></a>
+          <a class="navbar-brand"><router-link to="/"><img id="logo" src="./assets/squarularized.png" alt="Logo"></img>H<img id="name" src="./assets/Logo.png" alt="Name"></img></router-link></a>
           
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link">Contact Us<span class="sr-only">(current)</span></a>
+              <li class="nav-item">
+                <a class="nav-link"><router-link to="/contact">Contact Us</router-link><span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link">About Us</a>
+                <a class="nav-link"><router-link to="/about">About Us</router-link><span class="sr-only">(current)</span></a>
               </li>
             </ul>
           </div>
         </nav>
     </div>
     
-    <!--<img alt="Vue logo" src="../assets/logo.png">-->
-    <LogIn></LogIn>
-    <Welcome></Welcome>
-            
+    <div class="content">
+      <!--<img alt="Vue logo" src="../assets/logo.png">-->
+      <router-view />
+    </div>
+
   </div>
 </template>
 
@@ -35,8 +36,12 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     
 <script>
-import Welcome from './components/Welcome.vue'
-import LogIn from './components/LogIn.vue'
+import Welcome from './views/Welcome.vue'
+import LogIn from './views/LogIn.vue'
+import Contact from './views/Contact.vue'
+import About from './views/About.vue'
+import HomePage from './views/HomePage.vue'
+import Viewing from './views/Viewing.vue'
 
 export default {
   name: 'app',
@@ -51,6 +56,10 @@ export default {
 html {
   background-color: #040205;
   color: #CFCFCF;
+}
+
+#navbarNav {
+  align: right;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -83,8 +92,16 @@ nav {
   height: 88px;
 }
 
-.navbar-brand {
+nav .navbar-brand a{
   padding: 24px;
   color: #7E1A22 !important;
+}
+
+nav .navbar-nav li a{
+  color: #CFCFCF !important;
+}
+
+.nav-item {
+  color: #CFCFCF !important;
 }
 </style>
