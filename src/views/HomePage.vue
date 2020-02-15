@@ -3,11 +3,11 @@
 
   <h1>Jump back in</h1>
     <div class="row">
-      <img class="tile" v-for="(img, index) in recentlyViewed" :src='img' :key="index"/>
+      <router-link to="/Viewing"><img class="tile" v-for="(img, index) in recentlyViewed" :src='img' :key="index"/></router-link>
     </div>
   <h1>Popular</h1>
     <div class="row">
-      <img class="tile" v-for="(img, index) in popular" :src='img' :key="index"/>
+      <router-link to="/Viewing"><img class="tile" v-for="(img, index) in popular" :src='img' :key="index"/></router-link>
     </div>
   <h1>Your services</h1>
     <div class="row">
@@ -51,7 +51,7 @@ a {
   color: #42b983;
 }
 #row {
-  transition: 1s transform;
+  transition: 0.5s transform;
 }
 .tile {
   width: 15vw;
@@ -60,21 +60,21 @@ a {
   padding: 5px;
   box-sizing: border-box;
   transition: 1s transform;
-  transform-origin: top left;
+  transform-origin: top right;
   float: left;
   margin-right: 10px;
 }
 
 #row:hover {
-  transform: translate3d(-40px, 0, 0);
+  transform: translate3d(-10px, 0, 0);
 }
 
 .tile:hover {
-  transform: scale(2);
+  transform: scale(1.15);
 }
 
 .tile:hover ~ .tile {
-  transform: translate3d(80px, 0, 0);
+  transform: translate3d(20px, 0, 0);
 }
 
 </style>
