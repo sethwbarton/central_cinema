@@ -1,11 +1,19 @@
 <template>
   <div>
-    <h1>Jump back in</h1>
-    <img v-for="(img, index) in recentlyViewed" :src='img' :key="index"/>
-    <h1>Popular</h1>
-    <img v-for="(img, index) in popular" :src='img' :key="index"/>
-    <h1>Your services</h1>
-    <img v-for="(img, index) in serviceLogos" :src='img' :key="index"/>
+
+  <h1>Jump back in</h1>
+    <div class="row">
+      <img class="tile" v-for="(img, index) in recentlyViewed" :src='img' :key="index"/>
+    </div>
+  <h1>Popular</h1>
+    <div class="row">
+      <img class="tile" v-for="(img, index) in popular" :src='img' :key="index"/>
+    </div>
+  <h1>Your services</h1>
+    <div class="row">
+      <img class="tile" v-for="(img, index) in serviceLogos" :src='img' :key="index"/>
+    </div>
+
   </div>
 </template>
 
@@ -42,4 +50,31 @@ export default {
 a {
   color: #42b983;
 }
+#row {
+  transition: 1s transform;
+}
+.tile {
+  width: 15vw;
+  height: 24vw;
+
+  padding: 5px;
+  box-sizing: border-box;
+  transition: 1s transform;
+  transform-origin: top left;
+  float: left;
+  margin-right: 10px;
+}
+
+#row:hover {
+  transform: translate3d(-40px, 0, 0);
+}
+
+.tile:hover {
+  transform: scale(2);
+}
+
+.tile:hover ~ .tile {
+  transform: translate3d(80px, 0, 0);
+}
+
 </style>

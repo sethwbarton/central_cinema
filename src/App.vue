@@ -33,6 +33,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <a class="navbar-brand"><router-link to="/"><img id="name" src="./assets/Logo.png" alt="Name"></router-link></a>
+
         <font-awesome-icon icon="cog" /> <!-- float these left, make them bigger. -->
         <font-awesome-icon icon="user" />
 
