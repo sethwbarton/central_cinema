@@ -27,7 +27,8 @@
 
       <nav class="navbar navbar-expand-lg"> <!--  Make bigger? -->
 
-        <font-awesome-icon icon="search" />
+        <font-awesome-icon v-on:click="search()" icon="search" />
+        <input v-if="searching" type="text" placeholder="Search..">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -35,7 +36,13 @@
 
         <a class="navbar-brand"><router-link to="/"><img id="name" src="./assets/Logo.png" alt="Name"></router-link></a>
 
-        <font-awesome-icon icon="cog" /> <!-- float these left, make them bigger. -->
+        <!-- float these left, make them bigger. -->
+        <div class="dropdown">
+          <font-awesome-icon icon="cog" v-on:click="showSettings()" class="dropbtn"/>
+          <div v-if="inSettings" >
+            <router-link class="dropdown-content" to="/"><div  v-on:click="logout()">Logout</div></router-link>
+          </div>
+        </div>
         <font-awesome-icon icon="user" />
 
       </nav>
@@ -70,19 +77,55 @@ export default {
   },
   data() {
     return {
-      loggedIn: false
+      loggedIn: false,
+      inSettings: false,
+      searching: false
     }
   },
   methods: {
     logIn() {
       this.loggedIn = true
+    },
+    showSettings() {
+      if (this.inSettings === false) {
+        this.inSettings = true
+      } else {
+        this.inSettings = false
+      }
+    },
+    logout() {
+      this.loggedIn = false
+      this.inSettings = false
+    },
+    search() {
+      this.searching ? this.searching = false : this.searching = true
     }
   }
 }
 </script>
 
 <style>
-html {
+
+  .dropbtn {
+    margin: 24px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    background-color: #CFCFCF;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  html {
   background-color: #040205;
   color: #CFCFCF;
 }
