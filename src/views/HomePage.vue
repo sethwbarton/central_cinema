@@ -1,5 +1,31 @@
 <template>
   <div>
+    <div id="header-auth" >
+      <link href="http://allfont.net/allfont.css?fonts=broadway-normal" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+      <nav class="navbar navbar-expand-lg"> <!--  Make bigger? -->
+
+        <font-awesome-icon v-on:click="search()" icon="search" />
+        <input v-if="searching" type="text" placeholder="Search..">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand"><img id="name" src="../assets/Logo.png" alt="Name"></a>
+
+        <!-- float these left, make them bigger. -->
+        <div class="dropdown">
+          <font-awesome-icon icon="cog" v-on:click="showSettings()" class="dropbtn"/>
+          <div v-if="inSettings" >
+            <router-link v-on:click="logout()" class="dropdown-content" to="/"><div>Logout</div></router-link>
+          </div>
+        </div>
+        <font-awesome-icon icon="user" />
+
+      </nav>
+    </div>
 
   <h1>Jump back in</h1>
     <div class="row">
@@ -37,16 +63,112 @@ export default {
           require('../assets/star_wars.jpg'),
           require('../assets/the_7.jpg'),
           require('../assets/titanic.jpg'),
-          require('../assets/toys.jpg'),]
+          require('../assets/toys.jpg'),],
+        loggedIn: false,
+        inSettings: false,
+        searching: false
       }
   },
   methods: {
-      
+    showSettings() {
+      if (this.inSettings === false) {
+        this.inSettings = true
+      } else {
+        this.inSettings = false
+      }
+    },
+    logout() {
+      this.$emit('logOut', '')
+      this.loggedIn = false
+      this.inSettings = false
+    },
+    search() {
+      this.searching ? this.searching = false : this.searching = true
+    }
   }
 }
 </script>
 
 <style scoped>
+
+  .dropbtn {
+    margin: 24px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    background-color: #CFCFCF;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  html {
+    background-color: #040205;
+    color: #CFCFCF;
+  }
+  #navbarNav {
+    align: right;
+  }
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #040205;
+    /*text-align: center;*/
+    color: #CFCFCF;
+    /*margin-top: 60px;*/
+  }
+
+  h1 {
+    font-family: 'Broadway-Normal', arial;
+  }
+
+  nav {
+    width: 100%;
+    /*height: 112px;*/
+    height: 8%;
+    background-color: #7E1A22;
+    padding: 24px;
+  }
+
+  #logo {
+    height: 96px;
+    width: 96px;
+  }
+
+  #name {
+    height: 88px;
+  }
+
+  nav .navbar-brand a{
+    padding: 24px;
+    color: #7E1A22 !important;
+  }
+
+  nav .navbar-nav li a{
+    color: #CFCFCF !important;
+  }
+
+  .nav-item {
+    color: #CFCFCF !important;
+  }
+
+
+
+  #content {
+    height: 100%;
+
+  }
+
+
 a {
   color: #42b983;
 }
