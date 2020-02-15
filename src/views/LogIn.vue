@@ -10,7 +10,7 @@
           <p></p>
           <input type="password" placeholder="Password" v-model="password">
           <p></p>
-          <router-link to="/home" v-if="verifyLogin"><button>Log In</button></router-link>
+          <router-link to="/home" v-if="verifyLogin"><button v-on:click="verifyLogin">Log In</button></router-link>
           <p class="forgotten">
             Forgot your username?
             <br>
@@ -49,6 +49,7 @@ export default {
       }
   }, methods: {
       verifyLogin() {
+          this.$emit('loggedIn', '')
         var arrayLength = this.accounts.length;
         for (var i = 0; i < arrayLength; i++) {
             if(this.accounts[i].user == this.username && this.accounts[i].key == this.password) {
