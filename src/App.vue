@@ -64,26 +64,26 @@ export default {
 
 <style>
 
-  .dropbtn {
-    margin: 24px;
-    border: none;
-    cursor: pointer;
-  }
+.dropbtn {
+  margin: 24px;
+  border: none;
+  cursor: pointer;
+}
 
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-  .dropdown-content {
-    position: absolute;
-    background-color: #CFCFCF;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
+.dropdown-content {
+  position: absolute;
+  background-color: #CFCFCF;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
-  html {
+html {
   background-color: #040205;
   color: #CFCFCF;
 }
@@ -94,7 +94,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #040205;
+  background-color: #060405;
   /*text-align: center;*/
   color: #CFCFCF;
   /*margin-top: 60px;*/

@@ -50,10 +50,6 @@
     <br>
     <br>
     <br>
-    
-    <div id="footer">
-      <img src="../assets/bottom_bar.png" alt="Possible Streaming Services"></img>
-    </div>
   </div>
 </template>
 
@@ -88,7 +84,7 @@ export default {
                 return false;
               }
               console.log("just before switch");
-              this.$router.push('/home');
+              this.router.push('/home');
               console.log("just after switch");
               return true;
           } else if (this.email.length > 0 || this.username.length > 0 || this.password.length > 0 || this.passwordverify.length > 0) {
@@ -103,16 +99,6 @@ export default {
                 return false;
           }
           return false;
-        //   this.$emit('loggedIn', '')
-        // var arrayLength = this.accounts.length;
-        // for (var i = 0; i < arrayLength; i++) {
-        //     if(this.accounts[i].user == this.username && this.accounts[i].key == this.password) {
-        //         // The user is in the database!
-        //         return true;
-        //     } else {
-        //         // Not this user...
-        //     }
-        // }
       }
   }
 }
@@ -200,10 +186,6 @@ input {
   text-align: center;
   font-size: 11pt;
   padding: 20px;
-}
-
-img {
-  width: 65%;
 }
 
 #snackbar {

@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <div id="header-unauth" v-if="!loggedIn">
+    <div id="header-unauth">
       <link href="http://allfont.net/allfont.css?fonts=broadway-normal" rel="stylesheet" type="text/css" />
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <nav class="navbar navbar-expand-lg">
@@ -21,35 +21,35 @@
         </div>
       </nav>
     </div>
-    <link href="http://allfont.net/allfont.css?fonts=broadway-normal" rel="stylesheet" type="text/css" />
-    <div id="real_snippet">
-
-
-    <div id="snippet">
-      <br>
-      <br>
-      <br>
-      <h1>Central</h1>
-      <h1>Cinema</h1>
-      <h3>All your streaming services in one place!</h3>
-      <br>
-      <router-link to="/login"><button>Log In</button></router-link>
-      <p></p>
-      <p>Don't have an account?</p>
-      <p></p>
-      <router-link to="/signUp"><button>Sign up for FREE!</button></router-link>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-    </div>
     
-    <div id="footer">
-      <img src="../assets/bottom_bar.png" alt="Possible Streaming Services"></img>
-    </div>
+    <link href="http://allfont.net/allfont.css?fonts=broadway-normal" rel="stylesheet" type="text/css" />
+    
+    <div id="real_snippet">
+      <div id="snippet">
+        <br>
+        <br>
+        <br>
+        <h1>Central</h1>
+        <h1>Cinema</h1>
+        <h3>All your streaming services in one place!</h3>
+        <br>
+        <router-link to="/login"><button>Log In</button></router-link>
+        <p></p>
+        <p>Don't have an account?</p>
+        <p></p>
+        <router-link to="/signUp"><button>Sign up for FREE!</button></router-link>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+    
+      <div id="footer">
+        <img id="bottom_img" src="../assets/bottom_bar.png" alt="Possible Streaming Services"></img>
+      </div>
     </div>
   </div>
 </template>
@@ -118,7 +118,8 @@ router-link {
   padding: 20px;
 }
 
-img {
+#bottom_img {
   width: 65%;
 }
+
 </style>

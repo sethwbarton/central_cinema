@@ -52,7 +52,7 @@
     <br>
     
     <div id="footer">
-      <img src="../assets/bottom_bar.png" alt="Possible Streaming Services"></img>
+      <img id="bottom_img" src="../assets/bottom_bar.png" alt="Possible Streaming Services"></img>
     </div>
   </div>
 </template>
@@ -195,7 +195,7 @@ input {
   padding: 20px;
 }
 
-img {
+#bottom_img {
   width: 65%;
 }
 

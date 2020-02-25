@@ -5,6 +5,8 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
       <nav class="navbar navbar-expand-lg"> <!--  Make bigger? -->
+      
+        <a class="navbar-brand"><router-link to="/home"><img id="logo" src="../assets/squarularized.png" alt="Logo"></img>H<img id="name" src="../assets/Logo.png" alt="Name"></img></router-link></a>
 
         <font-awesome-icon v-on:click="search()" icon="search" />
         <input v-if="searching" type="text" placeholder="Search..">
@@ -13,7 +15,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <a class="navbar-brand"><img id="name" src="../assets/Logo.png" alt="Name"></a>
+        
 
         <!-- float these left, make them bigger. -->
         <div class="dropdown">
@@ -27,6 +29,7 @@
       </nav>
     </div>
 
+  <div id="content">
   <h1>Jump back in</h1>
     <div class="row">
       <router-link to="/Viewing"><img class="tile" v-for="(img, index) in recentlyViewed" :src='img' :key="index"/></router-link>
@@ -39,6 +42,7 @@
     <div class="row">
       <img class="tile" v-for="(img, index) in serviceLogos" :src='img' :key="index"/>
     </div>
+  </div>
 
   </div>
 </template>
@@ -91,95 +95,97 @@ export default {
 
 <style scoped>
 
-  .dropbtn {
-    margin: 24px;
-    border: none;
-    cursor: pointer;
-  }
+.dropbtn {
+  margin: 24px;
+  border: none;
+  cursor: pointer;
+}
 
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-  .dropdown-content {
-    position: absolute;
-    background-color: #CFCFCF;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
+.dropdown-content {
+  position: absolute;
+  background-color: #CFCFCF;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
-  html {
-    background-color: #040205;
-    color: #CFCFCF;
-  }
-  #navbarNav {
-    align: right;
-  }
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #040205;
-    /*text-align: center;*/
-    color: #CFCFCF;
-    /*margin-top: 60px;*/
-  }
+html {
+  background-color: #060405;
+  color: #CFCFCF;
+}
 
-  h1 {
-    font-family: 'Broadway-Normal', arial;
-  }
+#navbarNav {
+  align: right;
+}
 
-  nav {
-    width: 100%;
-    /*height: 112px;*/
-    height: 8%;
-    background-color: #7E1A22;
-    padding: 24px;
-  }
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #060405;
+  /*text-align: center;*/
+  color: #CFCFCF;
+  /*margin-top: 60px;*/
+}
 
-  #logo {
-    height: 96px;
-    width: 96px;
-  }
+h1 {
+  font-family: 'Broadway-Normal', arial;
+}
 
-  #name {
-    height: 88px;
-  }
+nav {
+  width: 100%;
+  /*height: 112px;*/
+  height: 8%;
+  background-color: #7E1A22;
+  padding: 24px;
+}
 
-  nav .navbar-brand a{
-    padding: 24px;
-    color: #7E1A22 !important;
-  }
+#logo {
+  height: 96px;
+  width: 96px;
+}
 
-  nav .navbar-nav li a{
-    color: #CFCFCF !important;
-  }
+#name {
+  height: 88px;
+}
 
-  .nav-item {
-    color: #CFCFCF !important;
-  }
+nav .navbar-brand a{
+  padding: 24px;
+  color: #7E1A22 !important;
+}
+
+nav .navbar-nav li a{
+  color: #CFCFCF !important;
+}
+
+.nav-item {
+  color: #CFCFCF !important;
+}
 
 
 
-  #content {
-    height: 100%;
-
-  }
+#content {
+  height: 100%;
+}
 
 
 a {
   color: #42b983;
 }
+
 #row {
   transition: 0.5s transform;
 }
+
 .tile {
   width: 15vw;
   height: 24vw;
-
-  padding: 5px;
+  padding: 8px;
   box-sizing: border-box;
   transition: 1s transform;
   transform-origin: top right;
@@ -197,6 +203,11 @@ a {
 
 .tile:hover ~ .tile {
   transform: translate3d(20px, 0, 0);
+}
+
+#content {
+  margin: 24px;
+  padding: 32px;
 }
 
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="contact_us">
-    <div id="header-unauth" v-if="!loggedIn">
+    <div id="header-unauth">
       <link href="http://allfont.net/allfont.css?fonts=broadway-normal" rel="stylesheet" type="text/css" />
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <nav class="navbar navbar-expand-lg">
@@ -40,7 +40,7 @@
       exact show you're looking for. 
       <br>
     </p>
-    <button>Sign up for a free account today!</button>
+    <router-link to="/signUp"><button>Sign up for a free account today!</button></router-link>
   </div>
   </div>
 </template>
