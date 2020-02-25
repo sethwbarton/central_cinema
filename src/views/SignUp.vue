@@ -1,7 +1,7 @@
 <template>
-  <div class="logMeInScotty">
+  <div class="signMeUpScotty">
 
-      <div id="header-unauth">
+      <div id="header-unauth" v-if="!loggedIn">
           <link href="http://allfont.net/allfont.css?fonts=broadway-normal" rel="stylesheet" type="text/css" />
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
           <nav class="navbar navbar-expand-lg">
@@ -24,30 +24,30 @@
       </div>    <br>
     <br>
     <div id="stand_out">
-      <h1>Central Cinema</h1>
+      <h1>Create your FREE Account</h1>
       <br>
-      <form @submit.prevent="verifyLogin">
+      <form @submit.prevent="verifySignUp">
+          <input type="email" placeholder="Email" v-model="email">
+          <p></p>
           <input type="text" placeholder="Username" v-model="username">
           <p></p>
           <input type="password" placeholder="Password" v-model="password">
           <p></p>
-          <button v-on:click="verifyLogin">Log In</button>
-          <p class="forgotten">
-            Forgot your username?
-            <br>
-            Forgot your password?
-          </p>
+          <input type="password" placeholder="Verify Password" v-model="passwordverify">
+          <p></p>
+          <!--<router-link to="/home" v-if="verifySignUp"><button v-on:click="verifySignUp">Sign Up</button></router-link>-->
+          <button v-on:click="verifySignUp">Sign Up</button>
           <p>
-            Don't have an account?
+            Already have an account?
             <br>
-            <router-link to="/signUp"><button id="secondary">Sign up for FREE!</button></router-link>
+            <router-link to="/login"><button id="secondary">Go Log In</button></router-link>
           </p>
       </form>
       <br>
     </div>
+    <div id="snackbar">Your passwords do not match.</div>
+    <div id="snackbar2">Please fill all fields.</div>
     <br>
-    <div id="snackbar">Please fill both fields.</div>
-    <div id="snackbar2">Please enter valid credentials.</div>
     <br>
     <br>
     
@@ -58,12 +58,15 @@
 </template>
 
 <script>
+/*global router*/
 export default {
   name: 'LogIn',
   data() {
       return {
+          email: '',
           username: '',
           password: '',
+          passwordverify: '',
           accounts: [
             {"user": "jerry_without_ben", "key":"eyeofthetiger"},
             {"user": "fancy_nancy", "key":"eyeofthetiger"},
@@ -71,27 +74,10 @@ export default {
           ]
       }
   }, methods: {
-      verifyLogin() {
-        if (this.username.length > 0 && this.password.length > 0) {
-          var arrayLength = this.accounts.length;
-          for (var i = 0; i < arrayLength; i++) {
-            if(this.accounts[i].user == this.username && this.accounts[i].key == this.password) {
-                this.$router.push('/home');
-                return true;
-            }
-          }
-          // Get the snackbar DIV
-          var x = document.getElementById("snackbar2");
-
-          // Add the "show" class to DIV
-          x.className = "show";
-
-          // After 3 seconds, remove the show class from DIV
-          setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
-          return false;
-          
-        } else if (this.username.length > 0 || this.password.lenth > 0) {
-            // Get the snackbar DIV
+      verifySignUp() {
+          if (this.email.length > 0 && this.username.length > 0 && this.password.length > 0 && this.passwordverify.length > 0) {
+              if (this.password != this.passwordverify) {
+                    // Get the snackbar DIV
                 var x = document.getElementById("snackbar");
 
                 // Add the "show" class to DIV
@@ -100,7 +86,33 @@ export default {
                 // After 3 seconds, remove the show class from DIV
                 setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
                 return false;
-        }
+              }
+              console.log("just before switch");
+              this.$router.push('/home');
+              console.log("just after switch");
+              return true;
+          } else if (this.email.length > 0 || this.username.length > 0 || this.password.length > 0 || this.passwordverify.length > 0) {
+                  // Get the snackbar DIV
+                var x = document.getElementById("snackbar2");
+
+                // Add the "show" class to DIV
+                x.className = "show";
+
+                // After 3 seconds, remove the show class from DIV
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+                return false;
+          }
+          return false;
+        //   this.$emit('loggedIn', '')
+        // var arrayLength = this.accounts.length;
+        // for (var i = 0; i < arrayLength; i++) {
+        //     if(this.accounts[i].user == this.username && this.accounts[i].key == this.password) {
+        //         // The user is in the database!
+        //         return true;
+        //     } else {
+        //         // Not this user...
+        //     }
+        // }
       }
   }
 }
@@ -112,7 +124,7 @@ export default {
 /*  background-repeat: no-repeat;*/
 /*  background-size: 60%;*/
 /*}*/
-.logMeInScotty {
+.signMeUpScotty {
     background-image: url("https://videohive.img.customer.envatousercontent.com/files/56273334-f705-4423-b658-a78a1974a87b/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=6c9ff1a35f234b038e0cf90c3a2c0c1a");
     background-repeat: no-repeat;
     background-size: 60% 100%;
@@ -178,11 +190,6 @@ input {
 
 #secondary {
   font-size: 1.25em;
-}
-
-.forgotten {
-  text-decoration: underline;
-  font-size: .8em;
 }
 
 #footer {

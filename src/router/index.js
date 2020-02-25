@@ -6,6 +6,7 @@ import About from '../views/About.vue'
 import Contact from '../views/Contact.vue'
 import HomePage from '../views/HomePage.vue'
 import Viewing from '../views/Viewing.vue'
+import SignUp from '../views/SignUp.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
       path: '/viewing',
       name: 'Viewing',
       component: Viewing
+  },
+  {
+      path: '/signUp',
+      name: 'SignUp',
+      component: SignUp
   }
 ]
 

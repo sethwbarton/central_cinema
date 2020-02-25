@@ -37,7 +37,7 @@
       <p></p>
       <p>Don't have an account?</p>
       <p></p>
-      <button>Sign up for FREE!</button>
+      <router-link to="/signUp"><button>Sign up for FREE!</button></router-link>
       <br>
       <br>
       <br>
