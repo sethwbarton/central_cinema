@@ -24,6 +24,7 @@ import HomePage from './views/HomePage.vue'
 import Viewing from './views/Viewing.vue'
 import bottom_bar from './assets/bottom_bar.png'
 import SignUp from './views/SignUp.vue'
+import AddService from './views/AddService.vue'
 
 export default {
   name: 'app',

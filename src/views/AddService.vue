@@ -28,16 +28,17 @@
           </div>
         </nav>
       </div>
-      <video controls>
-          <source  src="../assets/video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-      </video>
+      
+      <div id="real_content">
+          Put things here?
+      </div>
+      
     </div>
 </template>
 
 <script>
     export default {
-        name: 'VideoViewer',
+        name: 'AddService',
         data() {
             return {
                 inSettings: false
@@ -59,16 +60,6 @@
 </script>
 
 <style scoped>
-
-video {
-    display: block;
-    margin: auto;
-    margin-top: 40px;
-    width: 65%;
-    height: 65%;
-    /*align: center;*/
-}
-
 .nav-item {
     color: #7E1A22 !important;
 }

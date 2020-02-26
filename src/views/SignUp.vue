@@ -13,13 +13,15 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav">
                       <li class="nav-item">
-                          <a class="nav-link"><router-link to="/contact">Contact Us</router-link><span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link"><router-link to="/about">About Us</router-link><span class="sr-only">(current)</span></a>
                       </li>
                   </ul>
               </div>
+              
+              <a class="nav-link"><router-link to="/about">About Us</router-link><span class="sr-only">(current)</span></a>
+              <a class="nav-link"><router-link to="/contact">Contact Us</router-link><span class="sr-only">(current)</span></a>
+              
           </nav>
       </div>    <br>
     <br>
@@ -255,5 +257,9 @@ input {
 @keyframes fadeout {
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
+}
+
+.nav-item {
+  color: #7E1A22 !important;
 }
 </style>

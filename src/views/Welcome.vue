@@ -12,13 +12,17 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link"><router-link to="/contact">Contact Us</router-link><span class="sr-only">(current)</span></a>
+              sdlfj
             </li>
             <li class="nav-item">
-              <a class="nav-link"><router-link to="/about">About Us</router-link><span class="sr-only">(current)</span></a>
+              blehg
             </li>
           </ul>
         </div>
+        
+        <a class="nav-link"><router-link to="/about">About Us</router-link><span class="sr-only">(current)</span></a>
+        <a class="nav-link"><router-link to="/contact">Contact Us</router-link><span class="sr-only">(current)</span></a>
+      
       </nav>
     </div>
     
@@ -122,4 +126,7 @@ router-link {
   width: 65%;
 }
 
+.nav-item {
+  color: #7E1A22 !important;
+}
 </style>

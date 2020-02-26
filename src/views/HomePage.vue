@@ -1,36 +1,43 @@
 <template>
   <div>
+    
     <div id="header-auth" >
       <link href="http://allfont.net/allfont.css?fonts=broadway-normal" rel="stylesheet" type="text/css" />
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-      <nav class="navbar navbar-expand-lg"> <!--  Make bigger? -->
-      
+      <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand"><router-link to="/home"><img id="logo" src="../assets/squarularized.png" alt="Logo"></img>H<img id="name" src="../assets/Logo.png" alt="Name"></img></router-link></a>
-
-        <font-awesome-icon v-on:click="search()" icon="search" />
-        <input v-if="searching" type="text" placeholder="Search..">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              Whuuuut
+            </li>
+            <li class="nav-item">
+              Huh
+            </li>
+          </ul>
+        </div>
         
-
-        <!-- float these left, make them bigger. -->
+        <font-awesome-icon v-on:click="search()" icon="search" />
+        <div id="search_bar">
+          H
+          <input v-if="searching" type="text" placeholder="Search...">
+        </div>
         <div class="dropdown">
-          <font-awesome-icon icon="cog" v-on:click="showSettings()" class="dropbtn"/>
-          <div v-if="inSettings" >
-            <router-link v-on:click="logout()" class="dropdown-content" to="/"><div>Logout</div></router-link>
+          <font-awesome-icon icon="user" v-on:click="showSettings()" class="dropbtn" />
+          <div v-if="inSettings">
+            <router-link v-on:click="logout()" class="dropdown-content" to="/"><p id="personal_settings"><b>Logout</b></p></router-link>
           </div>
         </div>
-        <font-awesome-icon icon="user" />
 
       </nav>
     </div>
 
   <div id="content">
-  <h1>Jump back in</h1>
+  <h1>Continue Watching</h1>
     <div class="row">
       <router-link to="/Viewing"><img class="tile" v-for="(img, index) in recentlyViewed" :src='img' :key="index"/></router-link>
     </div>
@@ -41,6 +48,7 @@
   <h1>Your services</h1>
     <div class="row">
       <img class="tile" v-for="(img, index) in serviceLogos" :src='img' :key="index"/>
+      <router-link to="/addService"><img class="tile" v-for="(img, index) in addLogo" :src='img' :key="index" /></router-link>
     </div>
   </div>
 
@@ -54,8 +62,9 @@ export default {
       return {
         serviceLogos: [ require('../assets/Netflix_Logo_RGB.png'),
           require('../assets/Amazon_Prime_Video_logo.svg'),
-          require('../assets/Disney_logo.svg'),
+          require('../assets/Disney_logo.png'),
           require('../assets/hulu-interactive-rgb.svg')],
+        addLogo: [ require('../assets/AddAnother.png')],
         recentlyViewed: [ require('../assets/avatar.jpg'),
           require('../assets/avengers.jpg'),
           require('../assets/forrest.jpg'),
@@ -114,35 +123,13 @@ export default {
   z-index: 1;
 }
 
-html {
-  background-color: #060405;
-  color: #CFCFCF;
-}
-
 #navbarNav {
-  align: right;
-}
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #060405;
-  /*text-align: center;*/
-  color: #CFCFCF;
-  /*margin-top: 60px;*/
+  text-align: left;
+  color: #7E1A22 !important;
 }
 
 h1 {
   font-family: 'Broadway-Normal', arial;
-}
-
-nav {
-  width: 100%;
-  /*height: 112px;*/
-  height: 8%;
-  background-color: #7E1A22;
-  padding: 24px;
 }
 
 #logo {
@@ -160,11 +147,11 @@ nav .navbar-brand a{
 }
 
 nav .navbar-nav li a{
-  color: #CFCFCF !important;
+  color: #7E1A22 !important;
 }
 
 .nav-item {
-  color: #CFCFCF !important;
+  color: #7E1A22 !important;
 }
 
 
@@ -210,4 +197,18 @@ a {
   padding: 32px;
 }
 
+#personal_settings {
+  color: #7E1A22;
+  margin: 16px;
+  text-decoration-style: bold;
+}
+
+#search_bar {
+  color: #7E1A22 !important;
+}
+
+font-awesome-icon {
+  width: 40px;
+  height: 40px;
+}
 </style>
