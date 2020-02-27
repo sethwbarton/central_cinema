@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <head>
+      <link href="http://allfont.net/allfont.css?fonts=broadway-su" rel="stylesheet" type="text/css"
+      <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
+    </head>
 
     
     <div id="content">
@@ -13,7 +17,6 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/050c765c4a.js" crossorigin="anonymous"></script>
     
 <script>
 import Welcome from './views/Welcome.vue'
@@ -102,12 +105,11 @@ html {
 }
 
 h1 {
-  font-family: 'Broadway-Normal', arial;
+  font-family: 'Limelight' !important;
 }
 
 nav {
   width: 100%;
-  /*height: 112px;*/
   height: 8%;
   background-color: #7E1A22;
   padding: 24px;
