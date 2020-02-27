@@ -30,7 +30,7 @@
       </div>
       
       <div id="real_content">
-          Put things here?
+          This page will be implemented later so that users can attach another service.
       </div>
       
     </div>

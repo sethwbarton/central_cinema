@@ -37,20 +37,22 @@
     </div>
 
   <div id="content">
-  <h1 >Continue Watching</h1>
+  <h1>Continue Watching</h1>
     <div class="row">
       <router-link to="/Viewing"><img class="tile" v-for="(img, index) in recentlyViewed" :src='img' :key="index"/></router-link>
       <p class="movieTitle" v-for="(title, index) in continueWatchingTitles" :key="index">{{title}}</p>
     </div>
+  <br>
   <h1>Popular</h1>
     <div class="row">
       <router-link to="/Viewing"><img class="tile" v-for="(img, index) in popular" :src='img' :key="index"/></router-link>
       <p class="movieTitle" v-for="(title, index) in popularTitles" :key="index">{{title}}</p>
     </div>
+    <br>
   <h1>Your services</h1>
     <div class="row">
-      <img class="tile" v-for="(img, index) in serviceLogos" :src='img' :key="index"/>
-      <router-link to="/addService"><img class="tile" v-for="(img, index) in addLogo" :src='img' :key="index" /></router-link>
+      <img class="small_tile" v-for="(img, index) in serviceLogos" :src='img' :key="index"/>
+      <router-link to="/addService"><img class="smallest_tile" v-for="(img, index) in addLogo" :src='img' :key="index" /></router-link>
     </div>
   </div>
 
@@ -64,7 +66,7 @@ export default {
       return {
         serviceLogos: [ require('../assets/Netflix_Logo_RGB.png'),
           require('../assets/Amazon_Prime_Video_logo.svg'),
-          require('../assets/Disney_logo.png'),
+          require('../assets/Disney2.png'),
           require('../assets/hulu-interactive-rgb.svg')],
         addLogo: [ require('../assets/AddAnother.png')],
         recentlyViewed: [ require('../assets/avatar.jpg'),
@@ -179,8 +181,6 @@ nav .navbar-nav li a{
   color: #7E1A22 !important;
 }
 
-
-
 #content {
   height: 100%;
 }
@@ -197,6 +197,28 @@ a {
 .tile {
   width: 15vw;
   height: 24vw;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: .5s transform;
+  transform-origin: top right;
+  float: left;
+  margin-right: 10px;
+}
+
+.small_tile {
+  width: 18vw;
+  height: 12vw;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: .5s transform;
+  transform-origin: top right;
+  float: left;
+  margin-right: 10px;
+}
+
+.smallest_tile {
+  width: 13vw;
+  height: 13vw;
   padding: 8px;
   box-sizing: border-box;
   transition: .5s transform;
