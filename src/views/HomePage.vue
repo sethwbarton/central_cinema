@@ -21,13 +21,13 @@
           </ul>
         </div>
         
-        <font-awesome-icon v-on:click="search()" icon="search" />
+        <font-awesome-icon v-on:click="search()" icon="search" size="lg"/>
         <div id="search_bar">
           H
           <input v-if="searching" type="text" placeholder="Search...">
         </div>
         <div class="dropdown">
-          <font-awesome-icon icon="user" v-on:click="showSettings()" class="dropbtn" />
+          <font-awesome-icon icon="user" v-on:click="showSettings()" class="dropbtn" size="lg"/>
           <div v-if="inSettings">
             <router-link v-on:click="logout()" class="dropdown-content" to="/"><p id="personal_settings"><b>Logout</b></p></router-link>
           </div>
@@ -39,8 +39,8 @@
   <div id="content">
   <h1 >Continue Watching</h1>
     <div class="row">
-      <router-link to="/Viewing"><img class="tile" v-for="(img, index) in recentlyViewed" :src='img' :key="index"/></router-link>
-      <p class="movieTitle" v-for="(title, index) in continueWatchingTitles" :key="index">{{title}}</p>
+        <router-link to="/Viewing"><img class="tile" v-for="(img, index) in recentlyViewed" :src='img' :key="index"/></router-link>
+        <p class="movieTitle" v-for="(title, index) in continueWatchingTitles" :key="index">{{title}}</p>
     </div>
   <h1>Popular</h1>
     <div class="row">
@@ -85,7 +85,7 @@ export default {
           require('../assets/space_odyssey.jpg'),
           require('../assets/star_wars.jpg'),
           require('../assets/the_7.jpg'),
-          require('../assets/titanic.jpg'),
+          require('../assets/titanic2.jpg'),
           require('../assets/toys.jpg'),],
         popularTitles: [
                 "The Mandalorian",
@@ -179,12 +179,9 @@ nav .navbar-nav li a{
   color: #7E1A22 !important;
 }
 
-
-
 #content {
   height: 100%;
 }
-
 
 a {
   color: #42b983;
