@@ -32,14 +32,7 @@
     </div>
 
   <div id="content">
-    <h1>Your services</h1>
-    <div class="row">
-      <img class="small_tile" v-for="(img, index) in myServiceLogos" :src='img' :key="index"/>
-    </div>
-    <h1>Add Another Service</h1>
-    <div class="row">
-      <router-link to="/attachAccount"><img class="small_tile" v-for="(img, index) in newServiceLogos" :src='img' :key="index"/></router-link>
-    </div>
+    Attach an account page here
   </div>
 
   </div>
@@ -47,12 +40,9 @@
 
 <script>
 export default {
-  name: 'AddService',
+  name: 'AttachAccount',
   data() {
       return {
-        myServiceLogos: [ require('../assets/Netflix_Logo_RGB.png'),
-          require('../assets/Amazon_Prime_Video_logo.svg'),
-          require('../assets/Disney2.png')],
         newServiceLogos: [require('../assets/hulu-interactive-rgb.svg')],
         addLogo: [ require('../assets/AddAnother.png')],
         loggedIn: false,

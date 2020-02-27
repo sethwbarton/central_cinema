@@ -8,6 +8,8 @@ import HomePage from '../views/HomePage.vue'
 import Viewing from '../views/Viewing.vue'
 import SignUp from '../views/SignUp.vue'
 import AddService from '../views/AddService.vue'
+import AfterAddHome from '../views/AfterAddHome.vue'
+import AttachAccount from '../views/AttachAccount.vue'
 
 Vue.use(VueRouter)
 
@@ -51,6 +53,16 @@ const routes = [
       path: '/addService',
       name: 'AddService',
       component: AddService
+  },
+  {
+      path: '/attachAccount',
+      name: 'AttachAccount',
+      component: AttachAccount
+  },
+  {
+      path: '/afterAddHome',
+      name: 'AfterAddHome',
+      component: AfterAddHome
   }
 ]
 

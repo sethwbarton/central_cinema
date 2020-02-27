@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <head>
-      <link href="http://allfont.net/allfont.css?fonts=broadway-su" rel="stylesheet" type="text/css"
       <link href="https://fonts.googleapis.com/css?family=Limelight&display=swap" rel="stylesheet">
     </head>
 
@@ -28,6 +27,8 @@ import Viewing from './views/Viewing.vue'
 import bottom_bar from './assets/bottom_bar.png'
 import SignUp from './views/SignUp.vue'
 import AddService from './views/AddService.vue'
+import AfterAddHome from'./views/AfterAddHome.vue'
+import AttachAccount from './views/AttachAccount.vue'
 
 export default {
   name: 'app',

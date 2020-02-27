@@ -66,8 +66,7 @@ export default {
       return {
         serviceLogos: [ require('../assets/Netflix_Logo_RGB.png'),
           require('../assets/Amazon_Prime_Video_logo.svg'),
-          require('../assets/Disney2.png'),
-          require('../assets/hulu-interactive-rgb.svg')],
+          require('../assets/Disney2.png')],
         addLogo: [ require('../assets/AddAnother.png')],
         recentlyViewed: [ require('../assets/avatar.jpg'),
           require('../assets/avengers.jpg'),
