@@ -5,7 +5,7 @@
       <link href="http://allfont.net/allfont.css?fonts=broadway-normal" rel="stylesheet" type="text/css" />
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand"><router-link to="/afterAddHome"><img id="back" src="../assets/back_arrow.png" alt="Back" />HH<img id="logo" src="../assets/squarularized.png" alt="Logo"></img>H<img id="name" src="../assets/Logo.png" alt="Name"></img></router-link></a>
+        <a class="navbar-brand"><router-link to="/home"><img id="back" src="../assets/back_arrow.png" alt="Back" />HH<img id="logo" src="../assets/squarularized.png" alt="Logo"></img>H<img id="name" src="../assets/Logo.png" alt="Name"></img></router-link></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
     <div class="row">
       <img class="small_tile" v-for="(img, index) in myServiceLogos" :src='img' :key="index"/>
     </div>
-    <h1>Add Another Service</h1>
+    <h1>Attach Another Service</h1>
     <div class="row">
       <router-link to="/attachAccount"><img class="small_tile" v-for="(img, index) in newServiceLogos" :src='img' :key="index"/></router-link>
     </div>
@@ -53,7 +53,10 @@ export default {
         myServiceLogos: [ require('../assets/Netflix_Logo_RGB.png'),
           require('../assets/Amazon_Prime_Video_logo.svg'),
           require('../assets/Disney2.png')],
-        newServiceLogos: [require('../assets/hulu-interactive-rgb.svg')],
+        newServiceLogos: [require('../assets/hulu-interactive-rgb.svg'),
+          require('../assets/cbs.jpg'),
+          require('../assets/cw.png'),
+          require('../assets/hgtv.png')],
         addLogo: [ require('../assets/AddAnother.png')],
         loggedIn: false,
         inSettings: false,

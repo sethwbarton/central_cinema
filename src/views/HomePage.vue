@@ -64,10 +64,10 @@ export default {
   name: 'HomePage',
   data() {
       return {
-        serviceLogos: [ require('../assets/Netflix_Logo_RGB.png'),
-          require('../assets/Amazon_Prime_Video_logo.svg'),
-          require('../assets/Disney2.png')],
-        addLogo: [ require('../assets/AddAnother.png')],
+        serviceLogos: [ require('../assets/Disney2.png'),
+          require('../assets/Netflix_Logo_RGB.png'),
+          require('../assets/Amazon_Prime_Video_logo.svg')],
+        addLogo: [ require('../assets/AddService.png')],
         recentlyViewed: [ require('../assets/avatar.jpg'),
           require('../assets/avengers.jpg'),
           require('../assets/forrest.jpg'),
@@ -215,8 +215,8 @@ a {
 }
 
 .smallest_tile {
-  width: 13vw;
-  height: 13vw;
+  width: 10vw;
+  height: 10vw;
   padding: 8px;
   box-sizing: border-box;
   transition: .5s transform;
