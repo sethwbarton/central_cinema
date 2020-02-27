@@ -37,13 +37,15 @@
     </div>
 
   <div id="content">
-  <h1>Continue Watching</h1>
+  <h1 >Continue Watching</h1>
     <div class="row">
       <router-link to="/Viewing"><img class="tile" v-for="(img, index) in recentlyViewed" :src='img' :key="index"/></router-link>
+      <p class="movieTitle" v-for="(title, index) in continueWatchingTitles" :key="index">{{title}}</p>
     </div>
   <h1>Popular</h1>
     <div class="row">
       <router-link to="/Viewing"><img class="tile" v-for="(img, index) in popular" :src='img' :key="index"/></router-link>
+      <p class="movieTitle" v-for="(title, index) in popularTitles" :key="index">{{title}}</p>
     </div>
   <h1>Your services</h1>
     <div class="row">
@@ -71,12 +73,28 @@ export default {
           require('../assets/godfather.jpg'),
           require('../assets/gone_with_the_wind.jpg'),
           require('../assets/gravity.jpg'),],
+        continueWatchingTitles: [
+                "Avatar",
+                "The Avengers: Endgame",
+                "Forrest Gump",
+                "The Godfather",
+                "Gone With the Wind",
+                "Gravity"
+        ],
         popular: [require('../assets/mando.jpg'),
           require('../assets/space_odyssey.jpg'),
           require('../assets/star_wars.jpg'),
           require('../assets/the_7.jpg'),
           require('../assets/titanic.jpg'),
           require('../assets/toys.jpg'),],
+        popularTitles: [
+                "The Mandalorian",
+                "2001: A Space Odyssey",
+                "Star Wars: A New Hope",
+                "The Magnificent 7",
+                "Titanic",
+                "Toy Story"
+        ],
         loggedIn: false,
         inSettings: false,
         searching: false
@@ -103,6 +121,13 @@ export default {
 </script>
 
 <style scoped>
+
+.movieTitle {
+  width: 15vw;
+  height: 2vw;
+  padding: 8px;
+  margin-right: 10px;
+}
 
 .dropbtn {
   margin: 24px;
@@ -165,7 +190,7 @@ a {
   color: #42b983;
 }
 
-#row {
+.row {
   transition: 0.5s transform;
 }
 
@@ -174,7 +199,7 @@ a {
   height: 24vw;
   padding: 8px;
   box-sizing: border-box;
-  transition: 1s transform;
+  transition: .5s transform;
   transform-origin: top right;
   float: left;
   margin-right: 10px;
