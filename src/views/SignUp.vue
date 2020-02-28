@@ -152,6 +152,7 @@ button {
   font-size: 1.5em;
   width: 240px;
 }
+
 router-link {
   color: #CFCFCF;
 }
@@ -163,6 +164,7 @@ router-link {
   margin-left: 62%;
   margin-right: 10%;
   align: center;
+  border-radius: 8px;
 }
 
 input {

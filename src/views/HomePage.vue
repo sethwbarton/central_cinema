@@ -86,15 +86,15 @@ export default {
           require('../assets/space_odyssey.jpg'),
           require('../assets/star_wars.jpg'),
           require('../assets/the_7.jpg'),
-          require('../assets/titanic2.jpg'),
-          require('../assets/toys.jpg'),],
+          require('../assets/toys.jpg'),
+          require('../assets/titanic2.jpg'),],
         popularTitles: [
                 "The Mandalorian",
                 "2001: A Space Odyssey",
                 "Star Wars: A New Hope",
                 "The Magnificent 7",
-                "Titanic",
-                "Toy Story"
+                "Toy Story",
+                "Titanic"
         ],
         loggedIn: false,
         inSettings: false,
@@ -230,7 +230,7 @@ a {
 }
 
 .tile:hover {
-  transform: scale(1.15);
+  transform: scale(1.03);
 }
 
 .tile:hover ~ .tile {

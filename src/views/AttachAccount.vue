@@ -31,10 +31,21 @@
       </nav>
     </div>
 
-  <div id="content">
-    Attach an account page here
+  <div id="main_content">
+    <h1>Link Your Account</h1>
+    <br>
+    <h3>Please enter valid credentials</h3>
+    <br>
+    <form @submit.prevent="verifyCredentials">
+      <input type="text" placeholder="Username/Email" v-model="username">
+      <p></p>
+      <input type="password" placeholder="Password" v-model="password">
+      <p></p>
+      <button v-on:click="verifyCredentials">Link Account</button>
+    </form>
   </div>
-
+  <div id="snackbar">Please fill both fields.</div>
+  <div id="snackbar2">Your account linked successfully!.</div>
   </div>
 </template>
 
@@ -47,7 +58,9 @@ export default {
         addLogo: [ require('../assets/AddAnother.png')],
         loggedIn: false,
         inSettings: false,
-        searching: false
+        searching: false,
+        username: '',
+        password: '',
       }
   },
   methods: {
@@ -65,6 +78,20 @@ export default {
     },
     search() {
       this.searching ? this.searching = false : this.searching = true
+    },
+    verifyCredentials() {
+      if (this.username.length > 0 && this.password.length > 0) {
+          var x = document.getElementById("snackbar2");
+          x.className = "show";
+          setTimeout(function(){x.className = x.className.replace("show", "");}, 3000);
+          this.$router.push('/afterAddHome');
+          return true;
+      } else if (this.username.length > 0 || this.password.length > 0) {
+          var x = document.getElementById("snackbar");
+          x.className = "show";
+          setTimeout(function(){x.className = x.className.replace("show", "");}, 3000);
+          return false;
+      }
     }
   }
 }
@@ -72,11 +99,40 @@ export default {
 
 <style scoped>
 
-.movieTitle {
-  width: 15vw;
-  height: 2vw;
+#main_content {
+  background-color: #CFCFCF !important;
+  color: #7E1A22 !important;
+  padding: 64px;
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-right: 35%;
+  text-align: center;
+  border-radius: 8px;
+}
+
+input {
+  background-color: #A67478;
+  border-radius: 8px;
+  font-size: 1.5em;
+  color: #7E1A22;
+  placeholder-color: #7E1A22;
+  width: 320px;
   padding: 8px;
-  margin-right: 10px;
+  border: none;
+}
+
+button {
+  background-color: #7E1A22;
+  border: none;
+  border-radius: 8px;
+  color: #CFCFCF;
+  font-size: 1.5em;
+  width: 240px;
+  padding: 8px;
+}
+
+h3 {
+  font-size: 1.8em;
 }
 
 .dropbtn {
@@ -103,8 +159,52 @@ export default {
   color: #7E1A22 !important;
 }
 
-h1 {
-  font-family: 'Broadway-Normal', arial;
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#snackbar2 {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar2.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
 #logo {

@@ -167,6 +167,7 @@ router-link {
   margin-left: 62%;
   margin-right: 10%;
   align: center;
+  border-radius: 8px;
 }
 
 input {

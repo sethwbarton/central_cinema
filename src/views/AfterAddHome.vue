@@ -69,32 +69,32 @@ export default {
           require('../assets/Amazon_Prime_Video_logo.svg'),
           require('../assets/hulu-interactive-rgb.svg')],
         addLogo: [ require('../assets/AddService.png')],
-        recentlyViewed: [ require('../assets/avatar.jpg'),
+        recentlyViewed: [ require('../assets/SinginInTheRain.png'),
+          require('../assets/avatar.jpg'),
           require('../assets/avengers.jpg'),
           require('../assets/forrest.jpg'),
           require('../assets/godfather.jpg'),
-          require('../assets/gone_with_the_wind.jpg'),
-          require('../assets/gravity.jpg'),],
+          require('../assets/gone_with_the_wind.jpg')],
         continueWatchingTitles: [
+                "Singin' in the Rain",
                 "Avatar",
                 "The Avengers: Endgame",
                 "Forrest Gump",
                 "The Godfather",
-                "Gone With the Wind",
-                "Gravity"
+                "Gone With the Wind"
         ],
-        popular: [require('../assets/mando.jpg'),
+        popular: [ require('../assets/antman.png'),
+          require('../assets/mando.jpg'),
           require('../assets/space_odyssey.jpg'),
           require('../assets/star_wars.jpg'),
           require('../assets/the_7.jpg'),
-          require('../assets/titanic2.jpg'),
-          require('../assets/toys.jpg'),],
+          require('../assets/toys.jpg')],
         popularTitles: [
+                "Antman",
                 "The Mandalorian",
                 "2001: A Space Odyssey",
                 "Star Wars: A New Hope",
                 "The Magnificent 7",
-                "Titanic",
                 "Toy Story"
         ],
         loggedIn: false,
@@ -231,7 +231,7 @@ a {
 }
 
 .tile:hover {
-  transform: scale(1.15);
+  transform: scale(1.03);
 }
 
 .tile:hover ~ .tile {
