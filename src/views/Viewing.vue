@@ -28,10 +28,20 @@
           </div>
         </nav>
       </div>
-      <video controls>
-          <source  src="../assets/video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-      </video>
+      <section>
+        <aside>
+          <h1>"Flury of Flight"</h1>
+          <br>
+          <p>Sorry, the video you selected is currently unavailable.</p><p>We here at Central Cinema are doing all we can to correct the issue.</p><p>While we fix the problem, here's some stock footage a mother-daughter pair experiencing the thrill of watching hot air balloons. Enjoy!</p>
+        </aside>
+        <article>
+          <video controls>
+            <source  src="../assets/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </article>
+      </section>
+      
     </div>
 </template>
 
@@ -60,12 +70,27 @@
 
 <style scoped>
 
+section {
+  margin-top: 16px;
+  margin-left: 24px;
+  margin-right: 24px;
+  padding: 24px;
+  display: flex;
+}
+
+aside {
+  flex: 1;
+}
+
+article {
+  flex: 9;
+}
+
 video {
-    display: block;
-    margin: auto;
-    margin-top: 40px;
-    width: 65%;
-    height: 65%;
+    /*display: block;*/
+    /*margin: auto;*/
+    width: 92%;
+    height: 92%;
     /*align: center;*/
 }
 

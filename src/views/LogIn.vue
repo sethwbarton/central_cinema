@@ -30,8 +30,8 @@
     <div id="stand_out">
       <h1>Central Cinema</h1>
       <br>
-      <form @submit.prevent="verifyLogin">
-          <input type="text" placeholder="Username" v-model="username">
+      <form @submit.prevent="verifySomething">
+          <input type="email" placeholder="Username" v-model="username">
           <p></p>
           <input type="password" placeholder="Password" v-model="password">
           <p></p>
@@ -41,12 +41,11 @@
             <br>
             Forgot your password?
           </p>
-          <p>
-            Don't have an account?
-            <br>
-            <router-link to="/signUp"><button id="secondary">Sign up for FREE!</button></router-link>
-          </p>
       </form>
+      <br>
+      Don't have an account?
+      <br>
+      <router-link to="/signUp"><button id="secondary">Sign up for FREE!</button></router-link>
       <br>
     </div>
     <br>
@@ -75,6 +74,7 @@ export default {
           ]
       }
   }, methods: {
+      verifySomething() {},
       verifyLogin() {
         if (this.username.length > 0 && this.password.length > 0) {
           var arrayLength = this.accounts.length;
@@ -155,6 +155,7 @@ button {
   color: #CFCFCF;
   font-size: 1.5em;
   width: 240px;
+  padding: 8px;
 }
 router-link {
   color: #CFCFCF;

@@ -36,7 +36,7 @@
     <br>
     <h3>Please enter valid credentials</h3>
     <br>
-    <form @submit.prevent="verifyCredentials">
+    <form @submit.prevent="verifySomething">
       <input type="text" placeholder="Username/Email" v-model="username">
       <p></p>
       <input type="password" placeholder="Password" v-model="password">
@@ -64,6 +64,7 @@ export default {
       }
   },
   methods: {
+    verifySomething() {},
     showSettings() {
       if (this.inSettings === false) {
         this.inSettings = true

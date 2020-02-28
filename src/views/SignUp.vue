@@ -28,30 +28,27 @@
     <div id="stand_out">
       <h1>Create your FREE Account</h1>
       <br>
-      <form @submit.prevent="verifySignUp">
+      <form @submit.prevent="verifySomething">
           <input type="email" placeholder="Email" v-model="email">
-          <p></p>
-          <input type="text" placeholder="Username" v-model="username">
           <p></p>
           <input type="password" placeholder="Password" v-model="password">
           <p></p>
-          <input type="password" placeholder="Verify Password" v-model="passwordverify">
-          <p></p>
-          <!--<router-link to="/home" v-if="verifySignUp"><button v-on:click="verifySignUp">Sign Up</button></router-link>-->
           <button v-on:click="verifySignUp">Sign Up</button>
-          <p>
-            Already have an account?
-            <br>
-            <router-link to="/login"><button id="secondary">Go Log In</button></router-link>
-          </p>
       </form>
       <br>
+      Already have an account?
+      <br>
+      <router-link to="/login"><button id="secondary">Log In HERE</button></router-link>
+      
+      <br>
     </div>
-    <div id="snackbar">Your passwords do not match.</div>
     <div id="snackbar2">Please fill all fields.</div>
     <br>
     <br>
     <br>
+    <div id="footer">
+      <img id="bottom_img" src="../assets/bottom_bar.png" alt="Possible Streaming Services"></img>
+    </div>
   </div>
 </template>
 
@@ -62,9 +59,7 @@ export default {
   data() {
       return {
           email: '',
-          username: '',
           password: '',
-          passwordverify: '',
           accounts: [
             {"user": "jerry_without_ben", "key":"eyeofthetiger"},
             {"user": "fancy_nancy", "key":"eyeofthetiger"},
@@ -72,24 +67,12 @@ export default {
           ]
       }
   }, methods: {
+      verifySomething() {},
       verifySignUp() {
-          if (this.email.length > 0 && this.username.length > 0 && this.password.length > 0 && this.passwordverify.length > 0) {
-              if (this.password != this.passwordverify) {
-                    // Get the snackbar DIV
-                var x = document.getElementById("snackbar");
-
-                // Add the "show" class to DIV
-                x.className = "show";
-
-                // After 3 seconds, remove the show class from DIV
-                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
-                return false;
-              }
-              console.log("just before switch");
+          if (this.email.length > 0 && this.password.length > 0) {
               this.router.push('/home');
-              console.log("just after switch");
               return true;
-          } else if (this.email.length > 0 || this.username.length > 0 || this.password.length > 0 || this.passwordverify.length > 0) {
+          } else if (this.email.length > 0 || this.password.length > 0) {
                   // Get the snackbar DIV
                 var x = document.getElementById("snackbar2");
 
@@ -151,6 +134,7 @@ button {
   color: #CFCFCF;
   font-size: 1.5em;
   width: 240px;
+  padding: 8px;
 }
 
 router-link {
@@ -165,6 +149,10 @@ router-link {
   margin-right: 10%;
   align: center;
   border-radius: 8px;
+}
+
+#bottom_img {
+  width: 65%;
 }
 
 input {
@@ -190,30 +178,6 @@ input {
   text-align: center;
   font-size: 11pt;
   padding: 20px;
-}
-
-#snackbar {
-  visibility: hidden; /* Hidden by default. Visible on click */
-  min-width: 250px; /* Set a default minimum width */
-  margin-left: -125px; /* Divide value of min-width by 2 */
-  background-color: #333; /* Black background color */
-  color: #fff; /* White text color */
-  text-align: center; /* Centered text */
-  border-radius: 2px; /* Rounded borders */
-  padding: 16px; /* Padding */
-  position: fixed; /* Sit on top of the screen */
-  z-index: 1; /* Add a z-index if needed */
-  left: 50%; /* Center the snackbar */
-  bottom: 30px; /* 30px from the bottom */
-}
-
-/* Show the snackbar when clicking on a button (class added with JavaScript) */
-#snackbar.show {
-  visibility: visible; /* Show the snackbar */
-  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-  However, delay the fade out process for 2.5 seconds */
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
 #snackbar2 {
